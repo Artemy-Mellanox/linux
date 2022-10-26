@@ -218,6 +218,8 @@ void mlx5_cmdif_debugfs_init(struct mlx5_core_dev *dev)
 					  &stats->last_failed_mbox_status);
 			debugfs_create_x32("last_failed_syndrome", 0400, stats->root,
 					   &stats->last_failed_syndrome);
+			stats->dump = true;
+			debugfs_create_bool("dump", 0600, stats->root, &stats->dump);
 		}
 	}
 }

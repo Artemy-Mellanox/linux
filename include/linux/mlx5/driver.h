@@ -274,6 +274,7 @@ struct mlx5_cmd_stats {
 	u8		last_failed_mbox_status;
 	/* last command failed syndrome returned by FW */
 	u32		last_failed_syndrome;
+	bool		dump;
 	struct dentry  *root;
 	/* protect command average calculations */
 	spinlock_t	lock;

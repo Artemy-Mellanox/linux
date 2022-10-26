@@ -838,6 +838,10 @@ static void dump_command(struct mlx5_core_dev *dev,
 	int dump_len;
 	int i;
 
+	if (!dev->cmd.stats[op].dump) {
+		return;
+	}
+
 	mlx5_core_dbg(dev, "cmd[%d]: start dump\n", ent->idx);
 	data_only = !!(mlx5_core_debug_mask & (1 << MLX5_CMD_DATA));
 
